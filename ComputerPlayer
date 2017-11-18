@@ -1,0 +1,15 @@
+public class ComputerPlayer extends Player { //create a class to have a computer player if only 1 player is selcted at the beginning
+
+	public ComputerPlayer(String name, PairOfDice pod) {
+		super(name, pod);
+	}
+	
+	@Override
+	public boolean rollAgain() {
+		if(sk.getRoundTotal() < 20) { // telling the computer until when to role. It says that it should keep rolling if it gets lower than player 1 
+			return true; 
+		}
+		return false;
+	}
+
+}
