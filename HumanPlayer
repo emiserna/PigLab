@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class HumanPlayer extends Player {
+
+	private Scanner s;
+
+	public HumanPlayer(String name, PairOfDice pod) { // calling on the PairOfDice class
+		super(name, pod);
+	}
+	
+	@Override
+	public boolean rollAgain() {
+		s = new Scanner(System.in);
+		System.out.println("Would you like to roll again [y/n]? ");
+		String response = s.nextLine(); // What the response is of the user. 
+		while(!response.equals("y") && !response.equals("n")) { // if there is any other data input other than y or n the message would be printed again. 
+			System.out.println("Would you like to roll again [y/n]? ");
+			response = s.nextLine();			
+		}
+		if(response.equals("y")) {
+			return true; // this would make the die roll again. 
+		}
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	public static void main(String[] args) {
+		HumanPlayer hp = new HumanPlayer("Bob", new PairOfDice());
+		System.out.println(hp.rollAgain());
+	}
+	
+
+}
