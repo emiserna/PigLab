@@ -1,0 +1,46 @@
+public class PairOfDice {
+	Die d1; //removed die d2; in order to only have one die
+
+	
+	public PairOfDice() {
+		d1 = new Die();
+		
+	}
+	
+	public void roll() {
+		d1.roll();
+	
+	}
+	
+	public boolean hasTwoOnes() {
+		if(d1.getValue() == 1) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean hasOneOne() {
+		if(d1.getValue() == 1) {
+			return true;
+		}
+		return false;
+	}
+	
+	public int totalValue() {
+		return (d1.getValue());
+	}
+	
+	public String toString() {
+		String d1string = d1.toString();
+		
+		return d1string + "\n" ;
+	}
+	
+	
+	public static void main(String[] args) {
+		PairOfDice pod = new PairOfDice();
+		pod.roll();
+		System.out.println(pod);
+	}
+	
+}
